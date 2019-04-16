@@ -5,8 +5,50 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Final_Assignment_jccummin_wpf"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="MainWindow" Height="450" Width="1100">
+    <Grid HorizontalAlignment="Left" Width="1090">
+        <Label Content="0.00" HorizontalAlignment="Left" Margin="58,32,0,0" VerticalAlignment="Top" Height="52" Width="210" BorderBrush="#FF0C0909" Background="#FFE0A2A2" BorderThickness="3" VerticalContentAlignment="Center" FontSize="24"/>
+        <Button x:Name="button_clear" Content="Enter" HorizontalAlignment="Left" Margin="222,328,0,0" VerticalAlignment="Top" Width="63" Height="50" Click="Button_enter_Click"/>
+        <Button Content="0" HorizontalAlignment="Left" Margin="139,328,0,0" VerticalAlignment="Top" Width="63" Height="50"/>
+        <Button Content="." HorizontalAlignment="Left" Margin="58,328,0,0" VerticalAlignment="Top" Width="64" Height="50"/>
+        <Button x:Name="button9" Content="9" HorizontalAlignment="Left" Margin="222,255,0,0" VerticalAlignment="Top" Width="63" Height="50" Click="Button9_Click"/>
+        <Button Content="8" HorizontalAlignment="Left" Margin="139,255,0,0" VerticalAlignment="Top" Width="63" Height="50"/>
+        <Button Content="7" HorizontalAlignment="Left" Margin="58,255,0,0" VerticalAlignment="Top" Width="64" Height="50"/>
+        <Button Content="6" HorizontalAlignment="Left" Margin="222,184,0,0" VerticalAlignment="Top" Width="63" Height="50"/>
+        <Button Content="5" HorizontalAlignment="Left" Margin="139,184,0,0" VerticalAlignment="Top" Width="63" Height="50"/>
+        <Button Content="4" HorizontalAlignment="Left" Margin="58,184,0,0" VerticalAlignment="Top" Width="64" Height="50"/>
+        <Button Content="3" HorizontalAlignment="Left" Margin="222,111,0,0" VerticalAlignment="Top" Width="63" Height="50"/>
+        <Button Content="2" HorizontalAlignment="Left" Margin="139,111,0,0" VerticalAlignment="Top" Width="63" Height="50"/>
+        <Button x:Name="button1" Content="1" HorizontalAlignment="Left" Margin="58,111,0,0" VerticalAlignment="Top" Width="64" Height="50" Click="Button1_Click"/>
+        <Label x:Name="total_expense_box" Content="0.00" HorizontalAlignment="Left" Margin="551,32,0,0" VerticalAlignment="Top" Height="52" Width="210" BorderBrush="#FF0C0909" Background="#FFE0A2A2" BorderThickness="3" VerticalContentAlignment="Center" FontSize="24"/>
+        <Label x:Name="credit_total_box" Content="0.00" HorizontalAlignment="Left" Margin="551,105,0,0" VerticalAlignment="Top" Height="52" Width="210" BorderBrush="#FF0C0909" Background="#FFE0A2A2" BorderThickness="3" VerticalContentAlignment="Center" FontSize="24"/>
+        <Label x:Name="input_num_box" Content="" HorizontalAlignment="Left" Margin="58,32,0,0" VerticalAlignment="Top" Height="52" Width="210" BorderBrush="#FF0C0909" Background="#FFE0A2A2" BorderThickness="3" VerticalContentAlignment="Center" FontSize="24"/>
+        <Button x:Name="button0" Content="0" HorizontalAlignment="Left" Margin="139,328,0,0" VerticalAlignment="Top" Width="63" Height="50" Click="Button0_Click"/>
+        <Button x:Name="button_decimal" Content="." HorizontalAlignment="Left" Margin="58,328,0,0" VerticalAlignment="Top" Width="64" Height="50" Click="Button_decimal_Click"/>
+        <Button x:Name="button8" Content="8" HorizontalAlignment="Left" Margin="139,255,0,0" VerticalAlignment="Top" Width="63" Height="50" Click="Button8_Click"/>
+        <Button x:Name="button7" Content="7" HorizontalAlignment="Left" Margin="58,255,0,0" VerticalAlignment="Top" Width="64" Height="50" Click="Button7_Click"/>
+        <Button x:Name="button6" Content="6" HorizontalAlignment="Left" Margin="222,184,0,0" VerticalAlignment="Top" Width="63" Height="50" Click="Button6_Click"/>
+        <Button x:Name="button5" Content="5" HorizontalAlignment="Left" Margin="139,184,0,0" VerticalAlignment="Top" Width="63" Height="50" Click="Button5_Click"/>
+        <Button x:Name="button4" Content="4" HorizontalAlignment="Left" Margin="58,184,0,0" VerticalAlignment="Top" Width="64" Height="50" Click="Button4_Click"/>
+        <Button x:Name="button3" Content="3" HorizontalAlignment="Left" Margin="222,111,0,0" VerticalAlignment="Top" Width="63" Height="50" Click="Button3_Click"/>
+        <Button x:Name="button2" Content="2" HorizontalAlignment="Left" Margin="139,111,0,0" VerticalAlignment="Top" Width="63" Height="50" Click="Button2_Click"/>
+        <Button x:Name="expense_set" Content="Expense" HorizontalAlignment="Left" Margin="306,255,0,0" VerticalAlignment="Top" Width="64" Height="50" Click="Expense_set_Click"/>
+        <Button x:Name="credit_set" Content="Credit" HorizontalAlignment="Left" Margin="306,184,0,0" VerticalAlignment="Top" Width="64" Height="50" Click="Credit_set_Click"/>
+        <Label x:Name="balance_box" Content="0.00" HorizontalAlignment="Left" Margin="551,178,0,0" VerticalAlignment="Top" Height="52" Width="210" BorderBrush="#FF0C0909" Background="#FFE0A2A2" BorderThickness="3" VerticalContentAlignment="Center" FontSize="24"/>
+        <Label Content="Total Expense" HorizontalAlignment="Left" Margin="426,32,0,0" VerticalAlignment="Top" Height="52" Width="120" FontSize="16" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+        <Label Content="Total Credit" HorizontalAlignment="Left" Margin="426,105,0,0" VerticalAlignment="Top" Height="52" Width="120" FontSize="16" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+        <Label Content="Amount Due" HorizontalAlignment="Left" Margin="426,178,0,0" VerticalAlignment="Top" Height="52" Width="120" FontSize="16" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+        <Label x:Name="expense_or_credit" Content="Expense" HorizontalAlignment="Left" Margin="303,70,0,0" VerticalAlignment="Top" Height="50" Width="85" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="3" Background="#FFF5A8E0" BorderBrush="Black"/>
+        <Label Content="Now Entering:" HorizontalAlignment="Left" Margin="289,10,0,0" VerticalAlignment="Top" Height="52" Width="115" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button x:Name="end_button" Content="End Transaction" HorizontalAlignment="Left" Margin="584,255,0,0" VerticalAlignment="Top" Width="148" Height="50" Click="End_button_Click"/>
+        <Label x:Name="messageLabel" Content="" HorizontalAlignment="Left" Margin="521,328,0,0" VerticalAlignment="Top" Height="52" Width="183" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label x:Name="Reciept_Printout" Content="Reciept Printout:" HorizontalAlignment="Left" Margin="865,29,0,0" VerticalAlignment="Top" Height="52" Width="143" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Content="Expense:" HorizontalAlignment="Left" Margin="794,86,0,0" VerticalAlignment="Top" Height="52" Width="120" FontSize="16" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+        <Label Content="Credit:" HorizontalAlignment="Left" Margin="794,151,0,0" VerticalAlignment="Top" Height="52" Width="120" FontSize="16" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+        <Label Content="Balance:" HorizontalAlignment="Left" Margin="794,253,0,0" VerticalAlignment="Top" Height="52" Width="120" FontSize="16" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+        <Label x:Name="balance_reciept" Content="" HorizontalAlignment="Left" Margin="956,267,0,0" VerticalAlignment="Top" Height="50" Width="109"/>
+        <Label x:Name="credit_reciept" Content="" HorizontalAlignment="Left" Margin="956,160,0,0" VerticalAlignment="Top" Height="50" Width="109"/>
+        <Label x:Name="expense_reciept" Content="" HorizontalAlignment="Left" Margin="956,101,0,0" VerticalAlignment="Top" Height="50" Width="109"/>
+
     </Grid>
 </Window>
