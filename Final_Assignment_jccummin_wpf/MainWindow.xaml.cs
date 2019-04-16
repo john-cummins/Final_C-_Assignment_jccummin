@@ -90,6 +90,7 @@ namespace Final_Assignment_jccummin_wpf
         {
             Double carryDouble = Convert.ToDouble(input_num_box.Content);
 
+            //Functions converts to string to ensure functionality with label
             if (ExpenseOrCredit)
             {
                 total_expense_box.Content = (Convert.ToDouble(total_expense_box.Content) + carryDouble).ToString();
@@ -99,10 +100,16 @@ namespace Final_Assignment_jccummin_wpf
                 credit_total_box.Content = (Convert.ToDouble(credit_total_box.Content) + carryDouble).ToString();
             }
 
+            //Updating Balance Box
             balance_box.Content = (Convert.ToDouble(credit_total_box.Content) - Convert.ToDouble(total_expense_box.Content)).ToString();
-
+            //Resetting input.
             input_num_box.Content = "";
         }
+
+
+        /**
+         * These two functions ensure easy identification of whether one is adding to the expense or the credit.
+         * */
         private void Expense_set_Click(object sender, RoutedEventArgs e)
         {
             ExpenseOrCredit = true;
@@ -114,16 +121,22 @@ namespace Final_Assignment_jccummin_wpf
             expense_or_credit.Content = "Credit";
 
         }
+
+        /**
+         * Final end button to process the transaction into the SQL table and create a transaction object to reflect the latest transaction.
+         * */
         private void End_button_Click(object sender, RoutedEventArgs e)
         {
 
             
        
             SqlConnection connection = new SqlConnection(@"Data Source=jccummin-assignnment3-comp1098.database.windows.net;Initial Catalog=jccumminassignment3Comp1098;User ID=jccummin;Password=********;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
-
+            //If something fails, the user is notified. They are free to continue inputting info, however.
             try { 
                 connection.Open();
                 SqlDataReader reader = null;
+
+                //Gethering the total cash left in the register. It started with 1000.00.
                 String totalCash = "";
                 String readQuery = ("Select TOP 1 TotalCash FROM Reciept ORDER BY RecieptID DESC");
 
@@ -137,10 +150,13 @@ namespace Final_Assignment_jccummin_wpf
 
                 reader.Close();
 
+                //Upload command is a simple insert into statement using the data we've already gathered.
                 String uploadQuery = ("INSERT INTO Reciept VALUES (" + Convert.ToDecimal(total_expense_box.Content) + ", " + Convert.ToDecimal(credit_total_box.Content) + ", " + Convert.ToDecimal(balance_box.Content) + ", " + (Convert.ToDecimal(totalCash) + Convert.ToDecimal(balance_box.Content) + ", GETDATE());"));
                 SqlCommand uploadCommand = new SqlCommand(uploadQuery, connection);
                 uploadCommand.ExecuteNonQuery();
 
+
+                //Creates new Reciept item with current data
                 Reciept newReciept = new Reciept();
 
                 newReciept.Expense = Convert.ToDecimal(total_expense_box.Content);
@@ -161,7 +177,7 @@ namespace Final_Assignment_jccummin_wpf
             {
 
 
-
+                //After all that, it records the info on the user's reciept, and notified them of the successful submission.
                 expense_reciept.Content = Convert.ToDouble(total_expense_box.Content);
                 credit_reciept.Content = Convert.ToDouble(credit_total_box.Content);
                 balance_reciept.Content = (Convert.ToDouble(credit_total_box.Content) - Convert.ToDouble(total_expense_box.Content));
